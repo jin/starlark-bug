@@ -10,7 +10,7 @@ object Echo {
 
    val failingVerboseDescription = args.zipWithIndex
      .map {
-       case (arg, index) => s"\t$index: '${arg.lines.mkString("\\n")}'"
+       case (arg, index) => s"\t$index: '${arg.linesIterator.mkString("\\n")}'"
      }
      .mkString("Arguments:\n", "\n", "")
    println(failingVerboseDescription)
